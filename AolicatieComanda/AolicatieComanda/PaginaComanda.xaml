@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AolicatieComanda.PaginaComanda">
+
+
+
+
+
+    <ContentPage.Content xmlns:local="clr-namespace:AolicatieComanda">
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" x:Name="listView" Margin="20" ItemSelected="OnDeleteButtonClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Label FontSize="Medium" Grid.Column="0" Text="{Binding Denumire}" />
+                                    <Label FontSize="Medium" Grid.Column="2" Text="{Binding Pret}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid  BackgroundColor="Gray" Grid.Row="1">
+                    <Label FontSize="Large" Grid.Column="1" Text="Total:" VerticalTextAlignment="Center"/>
+                    <Label  FontSize="Large" x:Name="total" Grid.Column="2"  VerticalTextAlignment="Center"/>
+                </Grid>
+                <Entry  Grid.Row="2" x:Name="nume"  FontSize="Large" Placeholder="Nume complet" PlaceholderColor="Gray">
+                    <Entry.Behaviors>
+                        <local:Validare/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Grid.Row="3" x:Name="adresa"  FontSize="Large" Placeholder="Adresa" PlaceholderColor="Gray">
+                    <Entry.Behaviors>
+                        <local:Validare/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Button Grid.Row="4" Clicked="Button_Clicked" FontSize="Large" Text="Comanda" />
+
+
+            </Grid>
+            
+        </StackLayout>
+                
+    </ContentPage.Content>
+</ContentPage>

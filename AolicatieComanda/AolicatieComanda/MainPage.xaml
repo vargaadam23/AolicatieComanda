@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AolicatieComanda.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adauga Produs"  Clicked="OnAdaugaClicked" />
+        <ToolbarItem Text="Alege produse"  Clicked="OnProduseClicked" />
+        <ToolbarItem Text="Comenzi"  Clicked="OnComandaClicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="18" CornerRadius="0">
+            <Label Text="Comenzi" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <ListView x:Name="listView" Margin="20" >
+            <ListView.Header>
+                <Grid BackgroundColor="Gray">
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="0" Text="ID Comanda" />
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="1" Text="Nume client" />
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="2" Text="Adresa" />
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="3" Text="Total" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label FontSize="Medium" Grid.Column="0" Text="{Binding ID}" />
+                            <Label FontSize="Medium" Grid.Column="1" Text="{Binding Nume_client}" />
+                            <Label FontSize="Medium" Grid.Column="2" Text="{Binding Adresa}" />
+                            <Label FontSize="Medium" Grid.Column="3" Text="{Binding Total}" />
+                            
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Frame BackgroundColor="#2196F3" Padding="18" CornerRadius="0">
+            <Label Text="Subcomenzi" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <ListView x:Name="subcomenziView" Margin="20">
+            <ListView.Header>
+                <Grid BackgroundColor="Gray">
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="0" Text="ID Subcomanda" />
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="1" Text="ID Produs" />
+                    <Label FontAttributes="Bold" FontSize="Medium" Grid.Column="2" Text="ID Comanda" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label FontSize="Medium" Grid.Column="0" Text="{Binding ID}" />
+                            <Label FontSize="Medium" Grid.Column="1" Text="{Binding IdFel}" />
+                            <Label FontSize="Medium" Grid.Column="2" Text="{Binding IdComanda}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+    </StackLayout>
+
+</ContentPage>

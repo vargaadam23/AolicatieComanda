@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AolicatieComanda.PaginaFeluri">
+    
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Label TextColor="Black" FontSize="Large" FontAttributes="Bold" Text="Alege produsele"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="listView" Margin="20" ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+
+                                <Label FontSize="Medium" Text="{Binding ID}" FontAttributes="Bold" />
+                                <Label FontSize="Medium" Grid.Column="1" Text="{Binding Denumire}" />
+                                <Label FontSize="Medium" Grid.Column="2" Text="{Binding Pret}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+                
+    </ContentPage.Content>
+</ContentPage>

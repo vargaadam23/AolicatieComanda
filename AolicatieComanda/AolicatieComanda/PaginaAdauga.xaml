@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AolicatieComanda.PaginaAdauga">
+    <ContentPage.Content xmlns:local="clr-namespace:AolicatieComanda">
+        <StackLayout>
+            <Entry   x:Name="denumire"  FontSize="Large" Placeholder="Denumire produs" PlaceholderColor="Gray">
+                <Entry.Behaviors>
+                    <local:Validare/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry x:Name="pret"  FontSize="Large" Placeholder="Pret in RON" PlaceholderColor="Gray">
+                <Entry.Behaviors>
+                    <local:Validare/>
+                </Entry.Behaviors>
+            </Entry>
+           
+            <Button Clicked="Button_Clicked" FontSize="Large" Text="Adaugare" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
